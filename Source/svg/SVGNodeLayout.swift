@@ -45,7 +45,7 @@ public protocol NodeLayout {
     func layout(node: Node, in size: Size)
 }
 
-class SVGNodeLayout: NodeLayout {
+public class SVGNodeLayout: NodeLayout {
 
     let svgSize: SVGSize
     let viewBox: Rect?
