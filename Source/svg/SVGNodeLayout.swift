@@ -38,7 +38,7 @@ class SVGSize {
 
 }
 
-protocol NodeLayout {
+public protocol NodeLayout {
 
     func computeSize(parent: Size) -> Size
 
@@ -61,11 +61,11 @@ class SVGNodeLayout: NodeLayout {
         self.yAlign = yAlign ?? .mid
     }
 
-    func computeSize(parent: Size) -> Size {
+    public func computeSize(parent: Size) -> Size {
         return svgSize.toPixels(total: parent)
     }
 
-    func layout(node: Node, in size: Size) {
+    public func layout(node: Node, in size: Size) {
         let svgSizeInPixels = svgSize.toPixels(total: size)
 
         if let viewBox = self.viewBox {
